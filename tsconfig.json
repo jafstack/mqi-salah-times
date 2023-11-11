@@ -22,6 +22,15 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "components/Table.jsx",
+    "components/Clock.jsx",
+    "components/HijriDateComponent.jsx",
+    "components/TimesSection.jsx"
+  ],
   "exclude": ["node_modules"]
 }
