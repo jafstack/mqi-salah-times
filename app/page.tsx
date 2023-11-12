@@ -1,6 +1,8 @@
 "use client";
 import { TimesSection } from "@/components/TimesSection";
 import axios from "axios";
+import Image from "next/image";
+import banner from "../images/footer.png";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -17,6 +19,12 @@ export default function Home() {
   return (
     <main className="flex flex-col md:flex-row w-full min-h-screen items-start justify-between p-10">
       {salahTimes ? <TimesSection times={salahTimes} /> : "...Loading"}
+      <div className="flex flex-col justify-between">
+        <div className="h-[80vh]"></div>
+        <div>
+          <Image src={banner} alt="" width={1200} />
+        </div>
+      </div>
     </main>
   );
 }
