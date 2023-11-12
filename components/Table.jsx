@@ -9,8 +9,6 @@ export const Table = ({ times }) => {
     asr: false,
     maghrib: false,
     isha: false,
-    nextAdhan: "",
-    nextNamaz: "",
   });
   let date = new Date();
   let month = date.getMonth() < 12 ? date.getMonth() + 1 : 1;
@@ -137,78 +135,72 @@ export const Table = ({ times }) => {
   }, [state]);
 
   return (
-    <>
-      <div className="salah-times-container">
-        <table>
-          <tbody>
-            <tr>
-              <th></th>
-              <th>Adhan</th>
-              <th>Iqamah</th>
-            </tr>
-            <tr className={state.fajr && "active"}>
-              <td style={{ width: "40%" }}>Fajr</td>
-              <td>{addZero("fajar_Adhan", 0)}</td>
-              <td>
-                {/* {addZero("fajar_iqamah", 0)} */}
-                {month < 12 && month > 8 ? "+5 min" : "+30 min"}
-              </td>
-            </tr>
-            <tr className={state.sunrise && "active"}>
-              <td>Sunrise</td>
-              <td>{addZero("Sunrise", 1)}</td>
-            </tr>
-            <tr className={state.zuhr && "active"}>
-              <td>Zuhr</td>
-              <td>{addZero("Zuhar_adhan", 2)}</td>
-              <td>
-                {/* {addZero("Zuhar_iqama", 2)} */}
-                +10 min
-              </td>
-            </tr>
-            <tr className={state.asr && "active"}>
-              <td>Asr</td>
-              <td>{addZero("asar_adhan", 3)}</td>
-              <td>
-                {/* {addZero("asar_iqamah", 3)} */}
-                +10 min
-              </td>
-            </tr>
-            <tr className={state.maghrib && "active"}>
-              <td>Maghrib</td>
-              <td>{addZero("maghrib_adhan", 4)}</td>
-              <td>
-                {/* {addZero("maghrib_iqamah", 4)} */}
-                +5 min
-              </td>
-            </tr>
-            <tr className={state.isha && "active"}>
-              <td>Isha</td>
-              <td>{addZero("isha_adhan", 5)}</td>
-              <td>
-                {/* {addZero("isha_iqamah", 5)} */}
-                {month < 11 && month > 6 ? "+5 min" : "+20 min"}
-              </td>
-            </tr>
-            <tr>
-              <td>Jumma</td>
-              <td></td>
-              <td>{month < 11 && month > 3 ? "14:00" : "13:00"}</td>
-            </tr>
-            {/* <tr>
-              <td>Jum'a-2 </td>
-              <td></td>
-              <td>{"14:30"}</td>
-            </tr> */}
-          </tbody>
-        </table>
-      </div>
-      {/* <TimeToNextPrayer
-        currentTime={currentTime}
-        nextAdhan={state.nextAdhan}
-        nextNamaz={state.nextNamaz}
-        IshaAdhan={IshaAdhan}
-      /> */}
-    </>
+    <table className="w-full text-2xl text-gray-500">
+      <thead className="flex flex-col gap-4 mb-4">
+        <tr className="flex space-x-5 w-full text-[#359ab0] font-bold ">
+          <td className="w-1/2"></td>
+          <td className="w-1/2">Adhan</td>
+          <td className="w-1/2">Iqamah</td>
+        </tr>
+      </thead>
+      <tbody className="flex flex-col gap-4">
+        <tr className={`flex gap-4 w-full ${state.fajr && "text-[#359ab0]"} `}>
+          <td className="w-1/3">Fajr</td>
+          <td className="w-1/3">{addZero("fajar_Adhan", 0)}</td>
+          <td className="w-1/3">
+            {/* {addZero("fajar_iqamah", 0)} */}
+            {month < 12 && month > 8 ? "+5 min" : "+30 min"}
+          </td>
+        </tr>
+        <tr
+          className={`flex gap-4 w-full ${state.sunrise && "text-[#359ab0]"} `}
+        >
+          <td className="w-1/3">Sunrise</td>
+          <td className="w-1/3">{addZero("Sunrise", 1)}</td>
+          <td className="w-1/3">{""}</td>
+        </tr>
+        <tr className={`flex gap-4 w-full ${state.zuhr && "text-[#359ab0]"} `}>
+          <td className="w-1/3">Zuhr</td>
+          <td className="w-1/3">{addZero("Zuhar_adhan", 2)}</td>
+          <td className="w-1/3">
+            {/* {addZero("Zuhar_iqama", 2)} */}
+            +10 min
+          </td>
+        </tr>
+        <tr className={`flex gap-4 w-full ${state.asr && "text-[#359ab0]"} `}>
+          <td className="w-1/3">Asr</td>
+          <td className="w-1/3">{addZero("asar_adhan", 3)}</td>
+          <td className="w-1/3">
+            {/* {addZero("asar_iqamah", 3)} */}
+            +10 min
+          </td>
+        </tr>
+        <tr
+          className={`flex gap-4 w-full ${state.maghrib && "text-[#359ab0]"} `}
+        >
+          <td className="w-1/3">Maghrib</td>
+          <td className="w-1/3">{addZero("maghrib_adhan", 4)}</td>
+          <td className="w-1/3">
+            {/* {addZero("maghrib_iqamah", 4)} */}
+            +5 min
+          </td>
+        </tr>
+        <tr className={`flex gap-4 w-full ${state.isha && "text-[#359ab0]"} `}>
+          <td className="w-1/3">Isha</td>
+          <td className="w-1/3">{addZero("isha_adhan", 5)}</td>
+          <td className="w-1/3">
+            {/* {addZero("isha_iqamah", 5)} */}
+            {month < 11 && month > 6 ? "+5 min" : "+20 min"}
+          </td>
+        </tr>
+        <tr className="flex gap-4 w-full">
+          <td className="w-1/3">Jumma</td>
+          <td className="w-1/3">
+            {month < 11 && month > 3 ? "14:00" : "13:00"}
+          </td>
+          <td className="w-1/3"></td>
+        </tr>
+      </tbody>
+    </table>
   );
 };

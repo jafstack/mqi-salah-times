@@ -15,7 +15,7 @@ export default function Home() {
     getTimes();
   }, []);
   return (
-    <main className="flex min-h-screen items-start justify-between p-10">
+    <main className="flex flex-col md:flex-row w-full min-h-screen items-start justify-between p-10">
       {salahTimes ? <TimesSection times={salahTimes} /> : "...Loading"}
     </main>
   );

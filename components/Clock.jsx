@@ -51,14 +51,14 @@ export default function ClockComponents() {
     setTime({ year, month, day, hrs, mins, sec });
   };
   return (
-    <div className="">
-      <h2>
+    <div className="flex flex-col justify-start items-center text-gray-400 mb-5">
+      <h2 className="text-[50px]">
         {time.hrs}:{time.mins}
       </h2>
-      <h2>
+      <h2 className="text-xl">
         {time.day} {time.month} {time.year}
       </h2>
-      <HijriDate />
+      {/* <HijriDate /> */}
     </div>
   );
 }

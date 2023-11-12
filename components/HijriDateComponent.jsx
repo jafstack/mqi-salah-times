@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import moment from "moment-hijri";
+// import moment from "moment-hijri";
 
 const islamiMonths = [
   "مُحَرَّم",
@@ -18,11 +18,11 @@ const islamiMonths = [
 ];
 
 const HijriDate = () => {
-  const hijriDate = moment();
+  // const hijriDate = moment();
   return (
-    <h2>
-      {`هـ${hijriDate.iYear()}`} {islamiMonths[hijriDate.iMonth()]}{" "}
-      {hijriDate.iDate()}{" "}
+    <h2 className="text-xl">
+      {/* {`هـ${hijriDate.iYear()}`} {islamiMonths[hijriDate.iMonth()]}{" "}
+      {hijriDate.iDate()}{" "} */}
     </h2>
   );
 };
