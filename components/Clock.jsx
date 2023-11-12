@@ -52,10 +52,10 @@ export default function ClockComponents() {
   };
   return (
     <div className="flex flex-col justify-start items-center text-gray-400 mb-5">
-      <h2 className="text-[50px]">
+      <h2 className="text-[70px] font-bold">
         {time.hrs}:{time.mins}
       </h2>
-      <h2 className="text-xl">
+      <h2 className="text-2xl">
         {time.day} {time.month} {time.year}
       </h2>
       {/* <HijriDate /> */}

@@ -22,7 +22,7 @@ export default function Home() {
       <div className="flex flex-col justify-between">
         <div className="h-[80vh]"></div>
         <div>
-          <Image src={banner} alt="" width={1200} />
+          <Image src={banner} alt="" width={1000} />
         </div>
       </div>
     </main>
