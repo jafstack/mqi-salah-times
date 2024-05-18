@@ -150,7 +150,7 @@ export const Table = ({ times }) => {
           <td className="w-1/3 items-center">Fajr</td>
           <td className="w-1/3">{addZero("fajar_Adhan", 0)}</td>
           <td className="w-1/3">
-            {month < 12 && month > 8 ? "+5 min" : "+30 min"}
+            {month > 3 && month < 10 ? "+15 min" : "+30 min"}
           </td>
         </tr>
         <tr
@@ -195,7 +195,7 @@ export const Table = ({ times }) => {
           <td className="w-1/3">{addZero("isha_adhan", 5)}</td>
           <td className="w-1/3">
             {/* {addZero("isha_iqamah", 5)} */}
-            {month < 11 && month > 6 ? "+5 min" : "+20 min"}
+            {month < 11 && month > 3 ? "+5 min" : "+20 min"}
           </td>
         </tr>
         <tr className="flex w-full">
