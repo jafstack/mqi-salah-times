@@ -135,77 +135,234 @@ export const Table = ({ times }) => {
   }, [state]);
 
   return (
-    <table className="w-full text-4xl text-gray-500">
-      <thead className="flex flex-col gap-4 mb-4">
-        <tr className="flex gap-3 w-full text-[#359ab0] font-bold ">
-          <td className="w-1/3">Salah</td>
-          <td className="w-1/3">Adhan</td>
-          <td className="w-1/3">Iqamah</td>
-        </tr>
-      </thead>
-      <tbody className="flex flex-col gap-5">
-        <tr
-          className={`flex w-full ${state.fajr && "text-[#359ab0] font-bold"} `}
-        >
-          <td className="w-1/3 items-center">Fajr</td>
-          <td className="w-1/3">{addZero("fajar_Adhan", 0)}</td>
-          <td className="w-1/3">
-            {month > 3 && month < 10 ? "+15 min" : "+30 min"}
-          </td>
-        </tr>
-        <tr
-          className={`flex w-full ${
-            state.sunrise && "text-[#359ab0] font-bold"
-          } `}
-        >
-          <td className="w-1/3">Sunrise</td>
-          <td className="w-1/3">{addZero("Sunrise", 1)}</td>
-          <td className="w-1/3 text-center">-</td>
-        </tr>
-        <tr
-          className={`flex w-full ${state.zuhr && "text-[#359ab0] font-bold"} `}
-        >
-          <td className="w-1/3">Zuhr</td>
-          <td className="w-1/3">{addZero("Zuhar_adhan", 2)}</td>
-          <td className="w-1/3">+10 min</td>
-        </tr>
-        <tr
-          className={`flex w-full ${state.asr && "text-[#359ab0] font-bold"} `}
-        >
-          <td className="w-1/3">Asr</td>
-          <td className="w-1/3">{addZero("asar_adhan", 3)}</td>
-          <td className="w-1/3">+10 min</td>
-        </tr>
-        <tr
-          className={`flex w-full ${
-            state.maghrib && "text-[#359ab0] font-bold"
-          } `}
-        >
-          <td className="w-1/3">Maghrib</td>
-          <td className="w-1/3">{addZero("maghrib_adhan", 4)}</td>
-          <td className="w-1/3">
-            {/* {addZero("maghrib_iqamah", 4)} */}
-            +5 min
-          </td>
-        </tr>
-        <tr
-          className={`flex w-full ${state.isha && "text-[#359ab0] font-bold"} `}
-        >
-          <td className="w-1/3">Isha</td>
-          <td className="w-1/3">{addZero("isha_adhan", 5)}</td>
-          <td className="w-1/3">
-            {/* {addZero("isha_iqamah", 5)} */}
-            {month < 11 && month > 3 ? "+5 min" : "+20 min"}
-          </td>
-        </tr>
-        <tr className="flex w-full">
-          <td className="w-1/3">Jumma</td>
-          <td className="w-1/3">
-            {month < 11 && month > 3 ? "14:00" : "13:00"}
-          </td>
-          <td className="w-1/3 text-center">-</td>
-        </tr>
-      </tbody>
-    </table>
+    <>
+      <table className="w-full lg:hidden text-4xl text-gray-500">
+        <thead>
+          <tr className="grid grid-cols-3 gap-2 p-4 text-[#359ab0] font-bold">
+            <th className="text-center">Salah</th>
+            <th className="text-center">Adhan</th>
+            <th className="text-center">Iqamah</th>
+          </tr>
+        </thead>
+        <tbody className="space-y-3">
+          <tr
+            className={`grid grid-cols-3 gap-2 p-3 rounded-lg ${
+              state.fajr && "text-[#359ab0] font-bold"
+            }`}
+          >
+            <td className="text-center">Fajr</td>
+            <td className="text-center">{addZero("fajar_Adhan", 0)}</td>
+            <td className="text-center">
+              {month > 3 && month < 10 ? "+15 min" : "+30 min"}
+            </td>
+          </tr>
+          <tr
+            className={`grid grid-cols-3 gap-2 p-3 rounded-lg ${
+              state.sunrise && "text-[#359ab0] font-bold"
+            }`}
+          >
+            <td className="text-center">Sunrise</td>
+            <td className="text-center">{addZero("Sunrise", 1)}</td>
+            <td className="text-center">-</td>
+          </tr>
+          <tr
+            className={`grid grid-cols-3 gap-2 p-3 rounded-lg ${
+              state.zuhr && "text-[#359ab0] font-bold"
+            }`}
+          >
+            <td className="text-center">Zuhr</td>
+            <td className="text-center">{addZero("Zuhar_adhan", 2)}</td>
+            <td className="text-center">+10 min</td>
+          </tr>
+          <tr
+            className={`grid grid-cols-3 gap-2 p-3 rounded-lg ${
+              state.asr && "text-[#359ab0] font-bold"
+            }`}
+          >
+            <td className="text-center">Asr</td>
+            <td className="text-center">{addZero("asar_adhan", 3)}</td>
+            <td className="text-center">+10 min</td>
+          </tr>
+          <tr
+            className={`grid grid-cols-3 gap-2 p-3 rounded-lg ${
+              state.maghrib && "text-[#359ab0] font-bold"
+            }`}
+          >
+            <td className="text-center">Maghrib</td>
+            <td className="text-center">{addZero("maghrib_adhan", 4)}</td>
+            <td className="text-center">+5 min</td>
+          </tr>
+          <tr
+            className={`grid grid-cols-3 gap-2 p-3 rounded-lg ${
+              state.isha && "text-[#359ab0] font-bold"
+            }`}
+          >
+            <td className="text-center">Isha</td>
+            <td className="text-center">{addZero("isha_adhan", 5)}</td>
+            <td className="text-center">
+              {month < 11 && month > 3 ? "+5 min" : "+20 min"}
+            </td>
+          </tr>
+          <tr className="grid grid-cols-3 gap-2 p-3 rounded-lg">
+            <td className="text-center">Jumma</td>
+            <td className="text-center">
+              {month < 11 && month > 3 ? "14:00" : "13:00"}
+            </td>
+            <td className="text-center">-</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table className="hidden lg:inline-table w-full mx-auto mt-28 text-xl md:text-3xl text-gray-700 table-fixed">
+        <thead>
+          <tr>
+            <th className="p-4 text-[#359ab0] text-center w-1/8">Salah</th>
+            <th
+              className={`${
+                state.fajr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              Fajr
+            </th>
+            <th
+              className={`${
+                state.sunrise && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              Sunrise
+            </th>
+            <th
+              className={`${
+                state.zuhr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              Zuhr
+            </th>
+            <th
+              className={`${
+                state.asr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              Asr
+            </th>
+            <th
+              className={`${
+                state.maghrib && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              Maghrib
+            </th>
+            <th
+              className={`${
+                state.isha && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              Isha
+            </th>
+            <th className="text-center w-1/8">Jumma</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="p-4 font-semibold text-[#359ab0] text-center w-1/8">
+              Adhan
+            </td>
+            <td
+              className={`${
+                state.fajr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              {addZero("fajar_Adhan", 0)}
+            </td>
+            <td
+              className={`${
+                state.sunrise && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              {addZero("Sunrise", 1)}
+            </td>
+            <td
+              className={`${
+                state.zuhr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              {addZero("Zuhar_adhan", 2)}
+            </td>
+            <td
+              className={`${
+                state.asr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              {addZero("asar_adhan", 3)}
+            </td>
+            <td
+              className={`${
+                state.maghrib && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              {addZero("maghrib_adhan", 4)}
+            </td>
+            <td
+              className={`${
+                state.isha && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              {addZero("isha_adhan", 5)}
+            </td>
+            <td className="text-center w-1/8">
+              {month < 11 && month > 3 ? "14:00" : "13:00"}
+            </td>
+          </tr>
+          <tr>
+            <td className="p-4 font-semibold text-[#359ab0] text-center w-1/8">
+              Iqamah
+            </td>
+            <td
+              className={`${
+                state.fajr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              {month > 3 && month < 10 ? "+15 min" : "+30 min"}
+            </td>
+            <td
+              className={`${
+                state.sunrise && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              -
+            </td>
+            <td
+              className={`${
+                state.zuhr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              +10 min
+            </td>
+            <td
+              className={`${
+                state.asr && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              +10 min
+            </td>
+            <td
+              className={`${
+                state.maghrib && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              +5 min
+            </td>
+            <td
+              className={`${
+                state.isha && "text-[#359ab0] font-bold"
+              } text-center w-1/8`}
+            >
+              {month < 11 && month > 3 ? "+5 min" : "+20 min"}
+            </td>
+            <td className="text-center w-1/8">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </>
   );
 };

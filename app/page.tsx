@@ -17,13 +17,12 @@ export default function Home() {
     getTimes();
   }, []);
   return (
-    <main className="flex flex-col md:flex-row w-full min-h-screen items-start justify-between p-10">
-      {salahTimes ? <TimesSection times={salahTimes} /> : "...Loading"}
-      <div className="flex flex-col justify-between">
-        <div className="h-[80vh]"></div>
-        <div>
-          <Image src={banner} alt="" priority />
-        </div>
+    <main className="flex flex-col gap-9 w-full items-center justify-between min-h-screen pt-10">
+      <div className="flex flex-col justify-start items-center max-w-[2000px] flex-grow">
+        {salahTimes ? <TimesSection times={salahTimes} /> : "...Loading"}
+      </div>
+      <div className="hidden lg:flex flex-col items-center justify-end w-full pb-4">
+        <Image src={banner} alt="" priority />
       </div>
     </main>
   );
