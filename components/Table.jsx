@@ -213,7 +213,7 @@ export const Table = ({ times }) => {
         </tbody>
       </table>
 
-      <table className="hidden lg:inline-table w-full mx-auto mt-28 text-xl md:text-3xl text-gray-700 table-fixed">
+      <table className="hidden lg:inline-table w-full mx-auto mt-5 text-xl md:text-3xl text-gray-700 table-fixed">
         <thead>
           <tr>
             <th className="p-4 text-[#359ab0] text-center w-1/8">Salah</th>
