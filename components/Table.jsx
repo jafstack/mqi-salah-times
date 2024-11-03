@@ -136,7 +136,7 @@ export const Table = ({ times }) => {
 
   return (
     <>
-      <table className="w-full lg:hidden text-4xl text-gray-500">
+      <table className="w-full lg:hidden text-4xl text-gray-400">
         <thead>
           <tr className="grid grid-cols-3 gap-2 p-4 text-[#359ab0] font-bold">
             <th className="text-center">Salah</th>
@@ -213,48 +213,54 @@ export const Table = ({ times }) => {
         </tbody>
       </table>
 
-      <table className="hidden lg:inline-table w-full mx-auto mt-5 text-xl md:text-3xl text-gray-700 table-fixed">
+      <table className="hidden lg:inline-table w-full mx-auto mt-5 text-xl md:text-3xl text-gray-400 table-fixed">
         <thead>
           <tr>
             <th className="p-4 text-[#359ab0] text-center w-1/8">Salah</th>
             <th
               className={`${
-                state.fajr && "text-[#359ab0] font-bold"
+                state.fajr &&
+                "bg-[#359ab0] rounded-tl-md rounded-tr-md text-black  font-bold"
               } text-center w-1/8`}
             >
               Fajr
             </th>
             <th
               className={`${
-                state.sunrise && "text-[#359ab0] font-bold"
+                state.sunrise &&
+                "bg-[#359ab0] rounded-tl-md rounded-tr-md text-black  font-bold"
               } text-center w-1/8`}
             >
               Sunrise
             </th>
             <th
               className={`${
-                state.zuhr && "text-[#359ab0] font-bold"
+                state.zuhr &&
+                "bg-[#359ab0] text-black  font-bold rounded-tl-md rounded-tr-md"
               } text-center w-1/8`}
             >
               Zuhr
             </th>
             <th
               className={`${
-                state.asr && "text-[#359ab0] font-bold"
+                state.asr &&
+                "bg-[#359ab0] text-black  font-bold rounded-tl-md rounded-tr-md"
               } text-center w-1/8`}
             >
               Asr
             </th>
             <th
               className={`${
-                state.maghrib && "text-[#359ab0] font-bold"
+                state.maghrib &&
+                "bg-[#359ab0] text-black font-bold rounded-tl-md rounded-tr-md"
               } text-center w-1/8`}
             >
               Maghrib
             </th>
             <th
               className={`${
-                state.isha && "text-[#359ab0] font-bold"
+                state.isha &&
+                "bg-[#359ab0] text-black rounded-tl-md rounded-tr-md  font-bold"
               } text-center w-1/8`}
             >
               Isha
@@ -269,42 +275,42 @@ export const Table = ({ times }) => {
             </td>
             <td
               className={`${
-                state.fajr && "text-[#359ab0] font-bold"
+                state.fajr && "bg-[#359ab0] text-black  font-bold"
               } text-center w-1/8`}
             >
               {addZero("fajar_Adhan", 0)}
             </td>
             <td
               className={`${
-                state.sunrise && "text-[#359ab0] font-bold"
+                state.sunrise && "bg-[#359ab0] text-black  font-bold"
               } text-center w-1/8`}
             >
               {addZero("Sunrise", 1)}
             </td>
             <td
               className={`${
-                state.zuhr && "text-[#359ab0] font-bold"
+                state.zuhr && "bg-[#359ab0] text-black  font-bold"
               } text-center w-1/8`}
             >
               {addZero("Zuhar_adhan", 2)}
             </td>
             <td
               className={`${
-                state.asr && "text-[#359ab0] font-bold"
+                state.asr && "bg-[#359ab0] text-black  font-bold"
               } text-center w-1/8`}
             >
               {addZero("asar_adhan", 3)}
             </td>
             <td
               className={`${
-                state.maghrib && "text-[#359ab0] font-bold"
+                state.maghrib && "bg-[#359ab0] text-black  font-bold"
               } text-center w-1/8`}
             >
               {addZero("maghrib_adhan", 4)}
             </td>
             <td
               className={`${
-                state.isha && "text-[#359ab0] font-bold"
+                state.isha && "bg-[#359ab0] text-black  font-bold"
               } text-center w-1/8`}
             >
               {addZero("isha_adhan", 5)}
@@ -319,42 +325,48 @@ export const Table = ({ times }) => {
             </td>
             <td
               className={`${
-                state.fajr && "text-[#359ab0] font-bold"
+                state.fajr &&
+                "bg-[#359ab0]  rounded-l-md rounded-r-md text-black  font-bold"
               } text-center w-1/8`}
             >
               {month > 3 && month < 10 ? "+15 min" : "+30 min"}
             </td>
             <td
               className={`${
-                state.sunrise && "text-[#359ab0] font-bold"
+                state.sunrise &&
+                "bg-[#359ab0] rounded-bl-md rounded-br-md text-black  font-bold"
               } text-center w-1/8`}
             >
               -
             </td>
             <td
               className={`${
-                state.zuhr && "text-[#359ab0] font-bold"
+                state.zuhr &&
+                "bg-[#359ab0] rounded-bl-md rounded-br-md text-black  font-bold"
               } text-center w-1/8`}
             >
               +10 min
             </td>
             <td
               className={`${
-                state.asr && "text-[#359ab0] font-bold"
+                state.asr &&
+                "bg-[#359ab0] rounded-bl-md rounded-br-md text-black  font-bold"
               } text-center w-1/8`}
             >
               +10 min
             </td>
             <td
               className={`${
-                state.maghrib && "text-[#359ab0] font-bold"
+                state.maghrib &&
+                "bg-[#359ab0] rounded-bl-md rounded-br-md text-black  font-bold"
               } text-center w-1/8`}
             >
               +5 min
             </td>
             <td
               className={`${
-                state.isha && "text-[#359ab0] font-bold"
+                state.isha &&
+                "bg-[#359ab0] rounded-bl-md rounded-br-md text-black  font-bold"
               } text-center w-1/8`}
             >
               {month < 11 && month > 3 ? "+5 min" : "+20 min"}
